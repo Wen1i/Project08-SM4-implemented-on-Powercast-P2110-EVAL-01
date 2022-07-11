@@ -1,9 +1,12 @@
-# 1
+# 介绍
 在无线电自供能设备Powercast-P2110-EVAL-01上成功部署了SM4算法，Powercast P2110-EVAL-01是由位于美国的 Powercast 公司所推出的面向无源感知领域的无源传感器网络开发套件，设备实物如图1所示（由学院老师支持使用）。在这里使用CoolTerm实现输出显示，输出结果如图2所示。
 ![image](https://user-images.githubusercontent.com/104118101/178275470-569891cf-7fb1-45e7-a1dc-2361e9725dac.png)
-< center>markdown图1 设备实物图< /center>
+
+图1
 ![image](https://user-images.githubusercontent.com/104118101/178276064-9dbf8471-c89c-45bb-950b-9068760c96e4.png)
-< center>markdown图2 输出结果< /center>
+
+图2
+# 问题及解决办法
 在部署时，遇到的困难如下：<br>
 1.传输数据长度有限<br>
 我们通过测试，传输22字节以上的时候会出现问题，具体地说，在End_Point(下简称EP)端利用MiApp_WriteData()把数据逐字节写入TxBuffer中，数据能够正常发出，但是在Access_Point(下简称AP)端无法正常接收该数据包。<br>
@@ -18,7 +21,7 @@ AP端初始闪存已经占用了96%，只剩下4%的闪存了，加入加解密�
 问题3的解决办法：尝试在函数的后半段部分语句后面加上ConsolePutROMString ((ROM char*)"");，即可解密成功，我们认为是因为调用了ConsolePutROMString()函数让系统持续执行了下去而不重启。这样就可以正常输出解密后的数据同时不打印其他字符。
 
 
-# 2
+# 参考
 Lifetime Power(R) Energy Harvesting Development Kit for Wireless Sensors
 Powercast Corporation
 
