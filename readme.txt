@@ -1,3 +1,4 @@
+在无线电自供能设备Powercast-P2110-EVAL-01上成功部署了SM4算法，Powercast P2110-EVAL-01是由位于美国的 Powercast 公司所推出的面向无源感知领域的无源传感器网络开发套件。 （由学院老师支持使用），使用
 Lifetime Power(R) Energy Harvesting Development Kit for Wireless Sensors
 Powercast Corporation
 
